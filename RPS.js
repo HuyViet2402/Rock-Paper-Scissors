@@ -16,7 +16,7 @@ function getHumanChoice() {
     return humanChoice.toLowerCase();
 }
 let humanScores = 0;
-let computerScore = 0;
+let computerScores = 0;
 
 function playground(humanChoice, computerChoice) {
     console.log("You choose: " + humanChoice);
@@ -30,13 +30,13 @@ function playground(humanChoice, computerChoice) {
                 console.log("You win.");
                 humanScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
             else {
                 console.log("You loose.");
-                computerScore++;
+                computerScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
         }
         if(humanChoice == "paper") {
@@ -44,13 +44,13 @@ function playground(humanChoice, computerChoice) {
                 console.log("You win.");
                 humanScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
             else {
                 console.log("You loose.");
-                computerScore++;
+                computerScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
         }
         if(humanChoice == "scissors") {
@@ -58,13 +58,13 @@ function playground(humanChoice, computerChoice) {
                 console.log("You win.");
                 humanScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
             else {
                 console.log("You loose.");
-                computerScore++;
+                computerScores++;
                 console.log("Your score: " + humanScores);
-                console.log("Computer score: " + computerScore);
+                console.log("Computer score: " + computerScores);
             }
         }
     }
@@ -74,10 +74,21 @@ function playground(humanChoice, computerChoice) {
 function playRPS() {
     let humanChoice = null;
     let computerChoice = null;
-    while(true) {
+    let turns = 0
+    while(turns != 5) {
         humanChoice = getHumanChoice();
         computerChoice = getComputerChoice();
         playground(humanChoice, computerChoice);
+        turns++;
+    }
+    if(humanScores == computerScores) {
+        alert("DRAW");
+    }
+    else if(humanScores < computerScores) {
+        alert("YOU LOOSE");
+    }
+    else {
+        alert("YOU WIN");
     }
 }
 playRPS();
