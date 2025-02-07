@@ -3,20 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title>Rock Paper Scissors</title>
-        <script src="RPS.js"></script>
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
         <div class = "header">
         <div class="LHS">
-            <p>Turn: </p>
+            <p id = "Turn">Turn: </p>
             <P>Rule: First to 5 points win</P>
         </div>
         <div class="LHS">
-            <p>Player's point: 0</p>
-            <P>Computer's point: 0</P>
+            <p id = "pPoints">Player's point: 0</p>
+            <P id = "cPoints">Computer's point: 0</P>
         </div>
         </div>
+
+        <div class="moveDisplay">
+            <div class = "Up"> 
+                <p id = "pMove">Player's move: </p>
+                <p id = "CMove">Computer's move: </p>
+            </div>
+            <div class="Down">
+                <img src="./Rock.png">
+                <img src="./Rock.png">
+            </div>
+        </div>
+
         <div class = "Move">
             <button id = "Rock">
                 <img src="./Rock.png">
@@ -24,12 +35,13 @@
             <button id = "Paper">
                 <img src="./paper.png">
             </button>
-            <button id = "Scissor">
+            <button id = "Scissors">
                 <img src="./Scissors.png">
             </button>
         </div>
         <div class="footer">
             Copyright &#169 Huy Viet
         </div>
+        <script src="RPS.js"></script>
     </body>
 </html>

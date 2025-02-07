@@ -15,19 +15,40 @@ body {
     font-weight: bold;
     font-size: 25px;
 }
+.moveDisplay {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+
+    font-size: 30px;
+    font-weight: bold;
+}
+.moveDisplay .Up {
+    display: flex;
+    gap: 250px;
+}
+.moveDisplay .Down {
+    display: flex;
+    gap: 400px;
+}
+.moveDisplay img {
+    max-height: 100px;
+    max-width: 100px;
+}
 .Move {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 140px;
-    padding-bottom: 140px;
+    padding-top: 50px;
+    padding-bottom: 50px;
     gap: 250px;
 }
-img {
+.Move img {
     max-height: 300px;
     max-width: 300px;
 }
-#Rock, #Paper, #Scissor {
+#Rock, #Paper, #Scissors {
     max-height: 300px;
     max-width: 300px;
     border: solid;
@@ -46,11 +67,11 @@ img {
 #Paper:active {
     background-color: rgb(206, 33, 33);
 }
-#Scissor {
+#Scissors {
     background-color: rgb(233, 233, 98);
 }
 
-#Scissor:active {
+#Scissors:active {
     background-color: rgb(204, 204, 18);
 }
 .footer {

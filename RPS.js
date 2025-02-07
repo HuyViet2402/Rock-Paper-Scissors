@@ -8,9 +8,6 @@ function getComputerChoice() {
     let computerchoice = Math.floor(Math.random() * 3);
     return moves[computerchoice];
 } 
-function getHumanChoice() {
-    
-}
 let humanScores = 0;
 let computerScores = 0;
 
@@ -67,28 +64,15 @@ function playGround(humanChoice, computerChoice) {
 }
 // console.log(getHumanChoice());
 // console.log(getComputerChoice());
-function playRPS() {
-    let humanChoice = null;
-    let computerChoice = null;
-    let turns = 0
-    while(turns != 5) {
-        humanChoice = getHumanChoice();
-        computerChoice = getComputerChoice();
-        playground(humanChoice, computerChoice);
-        turns++;
-    }
-    if(humanScores == computerScores) {
-        alert("DRAW");
-    }
-    else if(humanScores < computerScores) {
-        alert("YOU LOOSE");
-    }
-    else {
-        alert("YOU WIN");
-    }
+function handleClick(humanClick) {
+    playGround(humanClick, getComputerChoice());
 }
 
-const buttons = document.querySelectorAll("button");
-buttons.forEach((button) => {
-    button.addEventListener("click", playGround);
-});
+const rockButton = document.querySelector("#Rock");
+rockButton.addEventListener('click', () => handleClick("rock"));
+
+const paperButton = document.querySelector("#Paper");
+paperButton.addEventListener('click', () => handleClick("paper"));
+
+const scissorsButton = document.querySelector("#Scissors");
+scissorsButton.addEventListener('click', () => handleClick("scissors"));
