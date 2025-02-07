@@ -9,16 +9,12 @@ function getComputerChoice() {
     return moves[computerchoice];
 } 
 function getHumanChoice() {
-    let humanChoice = window.prompt("Enter your choice ?");
-    while(!moves.includes(humanChoice.toLowerCase())) {
-        humanChoice = window.prompt("Invalid choice! Try again");
-    }
-    return humanChoice.toLowerCase();
+    
 }
 let humanScores = 0;
 let computerScores = 0;
 
-function playground(humanChoice, computerChoice) {
+function playGround(humanChoice, computerChoice) {
     console.log("You choose: " + humanChoice);
     console.log("Computer choose: " + computerChoice);
     if(humanChoice == computerChoice) {
@@ -91,4 +87,8 @@ function playRPS() {
         alert("YOU WIN");
     }
 }
-playRPS();
+
+const buttons = document.querySelectorAll("button");
+buttons.forEach((button) => {
+    button.addEventListener("click", playGround);
+});

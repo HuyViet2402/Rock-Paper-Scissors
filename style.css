@@ -1,0 +1,63 @@
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    background-color: lightgreen;
+    margin: 0;
+    padding: 5px 200px;
+    font-weight: bold;
+    font-size: 25px;
+}
+.Move {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 140px;
+    padding-bottom: 140px;
+    gap: 250px;
+}
+img {
+    max-height: 300px;
+    max-width: 300px;
+}
+#Rock, #Paper, #Scissor {
+    max-height: 300px;
+    max-width: 300px;
+    border: solid;
+}
+#Rock {
+    background-color: lightblue;
+}
+
+#Rock:active {
+    background-color: rgb(33, 162, 206);
+}
+#Paper {
+    background-color: rgb(247, 101, 101);
+}
+
+#Paper:active {
+    background-color: rgb(206, 33, 33);
+}
+#Scissor {
+    background-color: rgb(233, 233, 98);
+}
+
+#Scissor:active {
+    background-color: rgb(204, 204, 18);
+}
+.footer {
+    background-color: lightgreen;
+    display: flex;
+    justify-content: center;
+    justify-items: center;
+    padding: 20px;
+    font-size: 20px;
+}
