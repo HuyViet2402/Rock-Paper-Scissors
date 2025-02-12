@@ -5,11 +5,12 @@ const moves = [
     "scissors"
 ];
 function getComputerChoice() {
-    let computerchoice = Math.floor(Math.random() * 3);
-    return moves[computerchoice];
+    let computerChoice = Math.floor(Math.random() * 3);
+    return moves[computerChoice];
 } 
 let humanScores = 0;
 let computerScores = 0;
+let winner = "winner";
 
 function playGround(humanChoice, computerChoice) {
     console.log("You choose: " + humanChoice);
@@ -65,7 +66,59 @@ function playGround(humanChoice, computerChoice) {
 // console.log(getHumanChoice());
 // console.log(getComputerChoice());
 function handleClick(humanClick) {
-    playGround(humanClick, getComputerChoice());
+    let computerChoice = getComputerChoice();
+    playGround(humanClick, computerChoice);
+    updateAfterMove(humanClick, computerChoice);
+    
+    if (humanScores == 5 || computerScores == 5) {
+        if(humanScores == 5) {
+            winner = "Human";
+        }
+        else {
+            winner = "Computer";
+        }
+
+        if(window.confirm(winner + " win. Retry ?")) {
+            restartGame();
+        }
+        else {
+            
+        }
+    }
+}
+
+
+function restartGame() {
+    playerMoveImg.src = "./hello.png"
+    computerMoveImg.src = "./hello.png";
+    humanScores = 0;
+    computerScores = 0;
+    playerPointsText.textContent = "Player's point: " + humanScores.toString();
+    computerPointsText.textContent = "Computer's point: " + computerScores.toString();
+}
+function updateAfterMove(humanClick, computerChoice) {
+    if(humanClick == "rock") {
+        playerMoveImg.src = "./Rock.png";
+    }
+    else if(humanClick == "scissors") {
+        playerMoveImg.src = "./Scissors.png"
+    }
+    else {
+        playerMoveImg.src = "./paper.png"
+    }
+
+    if(computerChoice == "rock") {
+        computerMoveImg.src = "./Rock.png";
+    }
+    else if(computerChoice == "scissors") {
+        computerMoveImg.src = "./Scissors.png"
+    }
+    else {
+        computerMoveImg.src = "./paper.png"
+    }
+
+    playerPointsText.textContent = "Player's point: " + humanScores.toString();
+    computerPointsText.textContent = "Computer's point: " + computerScores.toString();
 }
 
 const rockButton = document.querySelector("#Rock");
@@ -76,3 +129,10 @@ paperButton.addEventListener('click', () => handleClick("paper"));
 
 const scissorsButton = document.querySelector("#Scissors");
 scissorsButton.addEventListener('click', () => handleClick("scissors"));
+
+const playerPointsText = document.querySelector(".header .RHS #pPoints");
+const computerPointsText = document.querySelector(".header .RHS #cPoints");
+
+const playerMoveImg = document.querySelector(".moveDisplay .Down #pMove");
+const computerMoveImg = document.querySelector(".moveDisplay .Down #cMove");
+

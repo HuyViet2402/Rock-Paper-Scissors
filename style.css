@@ -26,15 +26,17 @@ body {
 }
 .moveDisplay .Up {
     display: flex;
-    gap: 250px;
+    gap: 400px;
+    justify-content: center;
 }
 .moveDisplay .Down {
     display: flex;
-    gap: 400px;
+    gap: 500px;
+    justify-content: center;
 }
 .moveDisplay img {
-    max-height: 100px;
-    max-width: 100px;
+    max-height: 200px;
+    max-width: 200px;
 }
 .Move {
     display: flex;
